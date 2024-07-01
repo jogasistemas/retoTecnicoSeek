@@ -20,10 +20,16 @@ Servicio que gestiona información de candidatos que postulan a proceso de selec
 * Servicio desplegado en https://candidatemanagement-production.up.railway.app
 * Documentación de los endpoints en Swagger y openapi ubicado en  /openapi/api-doc.yaml
 * Una colección en Postman en Local Y Remoto:
-* * Para las pruebas en Postman ejecutar en el order numerico:
+* * Para las pruebas en Postman ejecutar en el order alfabetico:
 * * 1. Registrar Usuario
 * * 2. Obtener Token Usuario
 * * 3. Obtener todos los candidatos
 * * 4. Obtener Candidatos por Id
 * * 5. Registrar un Candidato
 * * 6. Eliminar un Candidate
+
+primero se crea un usuario(a), luego de eso se debe obtener el token del usuario creado(b),
+despues se podrá usar los demás endpoints enviando el token obtenido previamente.
+
+todo esta listo para ser probado, el servicio esta desplegado en la nube.
+

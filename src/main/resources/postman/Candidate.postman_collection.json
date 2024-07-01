@@ -1,0 +1,433 @@
+{
+	"info": {
+		"_postman_id": "c55c6914-2a00-4b9c-a032-820bc55511b0",
+		"name": "Candidate",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "9325910",
+		"_collection_link": "https://lively-moon-301039.postman.co/workspace/PROY-PROYECTOS~f3143bb4-021d-48c7-8824-9d431947399d/collection/9325910-c55c6914-2a00-4b9c-a032-820bc55511b0?action=share&source=collection_link&creator=9325910"
+	},
+	"item": [
+		{
+			"name": "candidate_management Local",
+			"item": [
+				{
+					"name": "3. Obtener todos los candidatos",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJwcnVlYmEiLCJpYXQiOjE3MTk3ODc1OTksImV4cCI6MTcxOTc4Nzg5OX0.KFmzFxrkSAYvt_T-mAukEQG6cMU5jPBopzX3lP7fLFVTZ4diytRJpGUg5p-8qk-8eJGq36KnxvoG2w7eAgd6HA",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8080/api/candidate",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"candidate"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "4. Obtener Candidatos por Id",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJwcnVlYmEiLCJpYXQiOjE3MTk3ODc1OTksImV4cCI6MTcxOTc4Nzg5OX0.KFmzFxrkSAYvt_T-mAukEQG6cMU5jPBopzX3lP7fLFVTZ4diytRJpGUg5p-8qk-8eJGq36KnxvoG2w7eAgd6HA",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8080/api/candidate/1",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"candidate",
+								"1"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "1. Registrar Usuario",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"username\" : \"prueba\",\r\n    \"password\" : \"prueba123\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8080/api/authentication/signup",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"authentication",
+								"signup"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "5. Registrar un Candidato",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJwcnVlYmEiLCJpYXQiOjE3MTk3ODc1OTksImV4cCI6MTcxOTc4Nzg5OX0.KFmzFxrkSAYvt_T-mAukEQG6cMU5jPBopzX3lP7fLFVTZ4diytRJpGUg5p-8qk-8eJGq36KnxvoG2w7eAgd6HA",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"fullname\" : \"luis garcia\",\r\n    \"email\" : \"luisgarcia@hotmail.com\",\r\n    \"gender\" : \"Male\",\r\n    \"salary\" : \"7000\",\r\n    \"experience\" : \"6\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8080/api/candidate",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"candidate"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "6. Eliminar un Candidate",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJwcnVlYmEiLCJpYXQiOjE3MTk3ODc1OTksImV4cCI6MTcxOTc4Nzg5OX0.KFmzFxrkSAYvt_T-mAukEQG6cMU5jPBopzX3lP7fLFVTZ4diytRJpGUg5p-8qk-8eJGq36KnxvoG2w7eAgd6HA",
+									"type": "string"
+								}
+							]
+						},
+						"method": "DELETE",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8080/api/candidate/6",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"candidate",
+								"6"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "2. Obtener Token Usuario",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"username\" : \"prueba\",\r\n    \"password\" : \"prueba123\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8080/api/authentication/signin",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"authentication",
+								"signin"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "candidate_management Remoto",
+			"item": [
+				{
+					"name": "3. Obtener todos los candidatos",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJwcnVlYmEiLCJpYXQiOjE3MTk3OTExNzQsImV4cCI6MTcxOTc5MTQ3NH0.JyUqDVFwxj2uf9LtnZQjxOaOIvX-W2S9QrThdgnTkAdKoKjfVg4na8xrEOc55fhoGVbH0ZgEx5a2NgQuVtERdg",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "https://candidatemanagement-production.up.railway.app/api/candidate",
+							"protocol": "https",
+							"host": [
+								"candidatemanagement-production",
+								"up",
+								"railway",
+								"app"
+							],
+							"path": [
+								"api",
+								"candidate"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "4. Obtener Candidatos por Id",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJwcnVlYmEiLCJpYXQiOjE3MTk3OTExNzQsImV4cCI6MTcxOTc5MTQ3NH0.JyUqDVFwxj2uf9LtnZQjxOaOIvX-W2S9QrThdgnTkAdKoKjfVg4na8xrEOc55fhoGVbH0ZgEx5a2NgQuVtERdg",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "https://candidatemanagement-production.up.railway.app/api/candidate/1",
+							"protocol": "https",
+							"host": [
+								"candidatemanagement-production",
+								"up",
+								"railway",
+								"app"
+							],
+							"path": [
+								"api",
+								"candidate",
+								"1"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "1. Registrar Usuario",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"username\" : \"prueba\",\r\n    \"password\" : \"prueba123\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "https://candidatemanagement-production.up.railway.app/api/authentication/signup",
+							"protocol": "https",
+							"host": [
+								"candidatemanagement-production",
+								"up",
+								"railway",
+								"app"
+							],
+							"path": [
+								"api",
+								"authentication",
+								"signup"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "5. Registrar un Candidato",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJwcnVlYmEiLCJpYXQiOjE3MTk3OTExNzQsImV4cCI6MTcxOTc5MTQ3NH0.JyUqDVFwxj2uf9LtnZQjxOaOIvX-W2S9QrThdgnTkAdKoKjfVg4na8xrEOc55fhoGVbH0ZgEx5a2NgQuVtERdg",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"fullname\" : \"luis garcia\",\r\n    \"email\" : \"luisgarcia@hotmail.com\",\r\n    \"gender\" : \"Male\",\r\n    \"salary\" : \"7000\",\r\n    \"experience\" : \"6\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "https://candidatemanagement-production.up.railway.app/api/candidate",
+							"protocol": "https",
+							"host": [
+								"candidatemanagement-production",
+								"up",
+								"railway",
+								"app"
+							],
+							"path": [
+								"api",
+								"candidate"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "6. Eliminar un Candidate",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJwcnVlYmEiLCJpYXQiOjE3MTk3OTExNzQsImV4cCI6MTcxOTc5MTQ3NH0.JyUqDVFwxj2uf9LtnZQjxOaOIvX-W2S9QrThdgnTkAdKoKjfVg4na8xrEOc55fhoGVbH0ZgEx5a2NgQuVtERdg",
+									"type": "string"
+								}
+							]
+						},
+						"method": "DELETE",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "https://candidatemanagement-production.up.railway.app/api/candidate/6",
+							"protocol": "https",
+							"host": [
+								"candidatemanagement-production",
+								"up",
+								"railway",
+								"app"
+							],
+							"path": [
+								"api",
+								"candidate",
+								"6"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "2. Obtener Token Usuario",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"username\" : \"prueba\",\r\n    \"password\" : \"prueba123\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "https://candidatemanagement-production.up.railway.app/api/authentication/signin",
+							"protocol": "https",
+							"host": [
+								"candidatemanagement-production",
+								"up",
+								"railway",
+								"app"
+							],
+							"path": [
+								"api",
+								"authentication",
+								"signin"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		}
+	]
+}

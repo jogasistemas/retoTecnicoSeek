@@ -1,0 +1,196 @@
+openapi: 3.0.1
+info:
+  title: OpenAPI definition
+  version: v0
+servers:
+- url: http://localhost:8080
+  description: Generated server url
+tags:
+- name: Candidate
+  description: API de Gestion de Candidatos
+paths:
+  /api/candidate:
+    get:
+      tags:
+      - Candidate
+      summary: Obtener todos los candidatos
+      description: Devuelve una lista de todos los candidatos
+      operationId: getAllCandidates
+      parameters:
+      - name: Authorization
+        in: header
+        required: true
+        schema:
+          type: string
+      responses:
+        "200":
+          description: OK
+          content:
+            '*/*':
+              schema:
+                type: array
+                items:
+                  $ref: "#/components/schemas/Candidate"
+    post:
+      tags:
+      - Candidate
+      summary: Crear un nuevo candidato
+      description: Crea un nuevo candidato y lo guarda en la base de datos
+      operationId: createCandidate
+      parameters:
+      - name: Authorization
+        in: header
+        required: true
+        schema:
+          type: string
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: "#/components/schemas/Candidate"
+        required: true
+      responses:
+        "200":
+          description: OK
+          content:
+            '*/*':
+              schema:
+                type: object
+  /api/authentication/signup:
+    post:
+      tags:
+      - login-controller
+      summary: Metodo signup
+      description: Registra un Usuario en la base de datos
+      operationId: registerUser
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: "#/components/schemas/RegisterRequest"
+        required: true
+      responses:
+        "200":
+          description: OK
+          content:
+            '*/*':
+              schema:
+                type: string
+  /api/authentication/signin:
+    post:
+      tags:
+      - login-controller
+      summary: Metodo signin
+      description: Devuelve el token en jwt
+      operationId: authenticateUser
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: "#/components/schemas/LoginRequest"
+        required: true
+      responses:
+        "200":
+          description: OK
+          content:
+            '*/*':
+              schema:
+                $ref: "#/components/schemas/LoginResponse"
+  /api/candidate/{id}:
+    get:
+      tags:
+      - Candidate
+      summary: Obtener todos los candidatos por ID
+      description: Devuelve un candidato
+      operationId: getCandidateById
+      parameters:
+      - name: Authorization
+        in: header
+        required: true
+        schema:
+          type: string
+      - name: id
+        in: path
+        required: true
+        schema:
+          type: integer
+          format: int64
+      responses:
+        "200":
+          description: OK
+          content:
+            '*/*':
+              schema:
+                $ref: "#/components/schemas/Candidate"
+    delete:
+      tags:
+      - Candidate
+      summary: Elimina un candidato
+      description: Elimina un candidato y lo guarda en la base de datos
+      operationId: deleteCandidate
+      parameters:
+      - name: Authorization
+        in: header
+        required: true
+        schema:
+          type: string
+      - name: id
+        in: path
+        required: true
+        schema:
+          type: integer
+          format: int64
+      responses:
+        "200":
+          description: OK
+          content:
+            '*/*':
+              schema:
+                type: string
+components:
+  schemas:
+    Candidate:
+      required:
+      - email
+      - fullname
+      type: object
+      properties:
+        id:
+          type: integer
+          format: int64
+        fullname:
+          type: string
+        email:
+          type: string
+        gender:
+          type: string
+        salary:
+          type: number
+        experience:
+          type: integer
+          format: int32
+    RegisterRequest:
+      required:
+      - password
+      - username
+      type: object
+      properties:
+        username:
+          type: string
+        password:
+          type: string
+    LoginRequest:
+      required:
+      - password
+      - username
+      type: object
+      properties:
+        username:
+          type: string
+        password:
+          type: string
+    LoginResponse:
+      type: object
+      properties:
+        token:
+          type: string

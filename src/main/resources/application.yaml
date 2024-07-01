@@ -1,0 +1,35 @@
+app:
+  jwt:
+    secret: $2y$10$dJMr85s.761OiPWe.m2nRem3GCWiTWQmuPGY4MpayC7z6DH6LC4v2
+    expirationMs: 300000
+spring:
+  datasource:
+    driver-class-name: com.mysql.cj.jdbc.Driver
+    #url: jdbc:mysql://localhost:3306/candidate_management
+    url: jdbc:mysql://roundhouse.proxy.rlwy.net:45890/candidate_management
+    username: root
+    #password: 123456
+    password: etnjLvnRQXliunUYtcytkLDNKXomzJWC
+  jpa:
+    hibernate:
+      # El ddl-auto nos sirve para poder update una entidad en la base de datos en caso solo hayamos generado la clase
+      ddl-auto: none
+    show-sql: true
+  flyway:
+    enabled: true
+    locations: classpath:db/migration
+    baselineOnMigrate: true
+
+logging:
+  level:
+    root: info
+    org:
+      springframework:
+        web: info
+      hibernate: error
+
+springdoc:
+  api-docs:
+    path: /v3/api-docs
+  swagger-ui:
+    path: /swagger-ui.html
